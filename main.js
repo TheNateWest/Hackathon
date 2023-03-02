@@ -1,10 +1,9 @@
 let input = '';
 
-const userInput = document.getElementById('userInput');
+const userInput = document.getElementById('user-input');
 const button = document.getElementById('button')
 const reset = document.getElementById('reset')
-const textOutput = document.getElementById('textOutput')
-console.log(button)
+const textOutput = document.getElementById('output')
 
 userInput.addEventListener('keyup', (event) => {
     input = event.target.value
@@ -12,7 +11,7 @@ userInput.addEventListener('keyup', (event) => {
 })
 
 button.addEventListener('click', () => {
-    textOutput.innerText = numOfRampsBelow(userInput.value)
+    textOutput.innerText = numOfRampsBelow(input)
 })
 
 reset.addEventListener('click', () => {
@@ -22,7 +21,7 @@ reset.addEventListener('click', () => {
 })
 
 
-function rampNumer(num) {
+function rampNumber(num) {
     let currentNum = num.toString().split("").map(Number);
 
     for (let i = 0; i < currentNum.length; i++) {
@@ -52,6 +51,6 @@ function numOfRampsBelow(num) {
      }
     }
 
-    return `${counter} total ramp numers are less than ${num}.`
+    return `${counter} total ramp numers are less than ${num}`
 
 }
